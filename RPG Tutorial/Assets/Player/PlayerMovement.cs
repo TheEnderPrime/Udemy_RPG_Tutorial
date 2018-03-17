@@ -6,24 +6,54 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float walkMoveStopRadius = 0.2f;
-    ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
+    ThirdPersonCharacter ThirdPersonCharacter;   // A reference to the ThirdPersonCharacter on the object
     CameraRaycaster cameraRaycaster;
     Vector3 currentClickTarget;
-        
+
+    bool isInDirectMode = false;
+    private bool Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
+
+
     private void Start()
     {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
-        m_Character = GetComponent<ThirdPersonCharacter>();
+        ThirdPersonCharacter = GetComponent<ThirdPersonCharacter>();
         currentClickTarget = transform.position;
     }
+
+    private void Update()
+        {
+            if (!Jump)
+            {
+                Jump = Input.GetButtonDown("Jump");
+            }
+        }
 
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+        if(Input.GetKeyDown(KeyCode.G)) // G for gamepad
+        {
+            isInDirectMode = !isInDirectMode; //toggle mode
+            currentClickTarget = transform.position; //clear the click target
+        }
+
+        if(isInDirectMode) {
+            
+            ProcessDirectMovement();
+        
+        } else {
+            ProcessMouseMovement(); //mouse movement
+        }
+
+        
+    }
+
+    private void ProcessMouseMovement() 
+    {
         if (Input.GetMouseButton(0))
         {
-            print("Cursor raycast hit layer " + cameraRaycaster.layerHit);
-            switch(cameraRaycaster.layerHit) 
+            switch(cameraRaycaster.currentLayerHit) 
             {
                 case Layer.Walkable:
                     currentClickTarget = cameraRaycaster.hit.point;  // So not set in default case
@@ -39,12 +69,29 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         var playerToClickPoint = currentClickTarget - transform.position;
-        if(playerToClickPoint.magnitude >= walkMoveStopRadius) {
-            m_Character.Move(playerToClickPoint, false, false);    
-        } else {
-            m_Character.Move(Vector3.zero, false, false);
+        if(playerToClickPoint.magnitude >= walkMoveStopRadius) 
+        {
+            ThirdPersonCharacter.Move(playerToClickPoint, false, false);    
+        } 
+        else 
+        {
+            ThirdPersonCharacter.Move(Vector3.zero, false, false);
         }
+    }
+
+    private void ProcessDirectMovement() 
+    {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        bool crouch = Input.GetKey(KeyCode.C);
+
+        // calculate camera relative direction to move:
         
+        Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 Move = v * cameraForward + h * Camera.main.transform.right;
+
+        ThirdPersonCharacter.Move(Move, crouch, Jump);
+        Jump = false;
     }
 }
 

@@ -67,13 +67,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1652570119484768}
-  m_LocalRotation: {x: 0.26472118, y: -0, z: -0, w: 0.9643251}
-  m_LocalPosition: {x: 0.088, y: 3.712, z: -3.431}
+  m_LocalRotation: {x: 0.31338695, y: -0, z: -0, w: 0.94962555}
+  m_LocalPosition: {x: 0.088, y: 5.03, z: -5.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4302098552867494}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30.701002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.527, y: 0, z: 0}
 --- !u!20 &20589324466432332
 Camera:
   m_ObjectHideFlags: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   walkCursor: {fileID: 2800000, guid: 428ed53e05b080b4c8a96bad8fb51fd7, type: 3}
   targetCursor: {fileID: 2800000, guid: 619ce05564d582b4486a0e40a0ea167b, type: 3}
   unknownCursor: {fileID: 2800000, guid: ef09342beae48184ea276d97b7127cb2, type: 3}
-  cursorHotspot: {x: 96, y: 96}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!114 &114764224325920430
 MonoBehaviour:
   m_ObjectHideFlags: 1
