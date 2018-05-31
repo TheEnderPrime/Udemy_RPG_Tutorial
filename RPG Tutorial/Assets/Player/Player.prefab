@@ -658,6 +658,8 @@ GameObject:
   - component: {fileID: 5426510}
   - component: {fileID: 13615390}
   - component: {fileID: 11469404}
+  - component: {fileID: 195098052933360328}
+  - component: {fileID: 114882864376875182}
   - component: {fileID: 114728280705775022}
   - component: {fileID: 114563891795621186}
   m_Layer: 0
@@ -1372,8 +1374,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
-  m_LocalRotation: {x: -0, y: 0.98239756, z: -0, w: 0.18680255}
-  m_LocalPosition: {x: -0.021578716, y: 0, z: -0.021009665}
+  m_LocalRotation: {x: 0.0009364602, y: 0.10763149, z: 0.0019308911, w: -0.99418855}
+  m_LocalPosition: {x: 76.47, y: 10, z: -44.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469942}
@@ -1381,7 +1383,7 @@ Transform:
   - {fileID: 448028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 158.468, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.13100001, y: 347.643, z: -0.208}
 --- !u!4 &409212
 Transform:
   m_ObjectHideFlags: 1
@@ -2025,7 +2027,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0, z: -3.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408730}
@@ -2486,8 +2488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 3600
-  m_StationaryTurnSpeed: 1800
+  m_MovingTurnSpeed: 1800
+  m_StationaryTurnSpeed: 900
   m_JumpPower: 6
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
@@ -2723,5 +2725,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10266d25a0deda3418ab091628a3eb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkMoveStopRadius: 0.5
-  attackMoveStopRadius: 5
+--- !u!114 &114882864376875182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5335f0882fe4d478883cc8c58ce906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+--- !u!195 &195098052933360328
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149790}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
