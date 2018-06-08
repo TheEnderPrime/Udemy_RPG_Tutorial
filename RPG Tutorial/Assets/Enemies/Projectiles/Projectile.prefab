@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54521527439516536}
   - component: {fileID: 114018812294624668}
   m_Layer: 0
-  m_Name: Fast Projectile
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee1a506134887449af235a64012c7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 20
+  projectileSpeed: 10
 --- !u!135 &135315837983526466
 SphereCollider:
   m_ObjectHideFlags: 1

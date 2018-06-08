@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 114544038169265358}
   - component: {fileID: 114747229716561396}
   m_Layer: 9
-  m_Name: Minion
+  m_Name: Thug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2503,7 +2503,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1189944606543030}
   m_LocalRotation: {x: -0, y: -0.99808484, z: -0, w: 0.061860338}
-  m_LocalPosition: {x: 22.137878, y: 0, z: -8.048843}
+  m_LocalPosition: {x: 22.495636, y: 0, z: -9.011948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4575509887590562}
@@ -2601,12 +2601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5a0f299835ec74789cee1add15368a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 40
-  chaseRadius: 8
-  attackRadius: 2
-  damagePerShot: 5
-  secondsBetweenShots: 0.5
-  projectileToUse: {fileID: 1232810385468424, guid: ec2239f342d29d842992aaaa2e2edcf9,
+  maxHealthPoints: 250
+  chaseRadius: 5
+  attackRadius: 3
+  damagePerShot: 80
+  secondsBetweenShots: 2
+  projectileToUse: {fileID: 1232810385468424, guid: f912a92c0088dc74a9117c7351d06fff,
     type: 2}
   projectileSocket: {fileID: 1056851447536718}
   aimOffset: {x: 0, y: 1, z: 0}
@@ -2695,7 +2695,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7dc11cc7f2579ed4eb47d82251d804e6, type: 2}
+  - {fileID: 2100000, guid: 5ca382e87e46a4a4db1322689a439500, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2806,7 +2806,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 8
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

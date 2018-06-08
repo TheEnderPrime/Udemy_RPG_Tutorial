@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 114544038169265358}
   - component: {fileID: 114747229716561396}
   m_Layer: 9
-  m_Name: Bruiser
+  m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2601,12 +2601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5a0f299835ec74789cee1add15368a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 200
-  chaseRadius: 10
-  attackRadius: 3
-  damagePerShot: 50
-  secondsBetweenShots: 0.5
-  projectileToUse: {fileID: 1232810385468424, guid: f912a92c0088dc74a9117c7351d06fff,
+  maxHealthPoints: 800
+  chaseRadius: 4.5
+  attackRadius: 1.5
+  damagePerShot: 100
+  secondsBetweenShots: 2
+  projectileToUse: {fileID: 1232810385468424, guid: ec2239f342d29d842992aaaa2e2edcf9,
     type: 2}
   projectileSocket: {fileID: 1056851447536718}
   aimOffset: {x: 0, y: 1, z: 0}
@@ -2695,7 +2695,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5ca382e87e46a4a4db1322689a439500, type: 2}
+  - {fileID: 2100000, guid: ed8780f4ccc670e4d9b56b5af3c88aa0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2806,7 +2806,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

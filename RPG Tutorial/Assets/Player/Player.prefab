@@ -711,7 +711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43feef0512d9b24495ee4d749d6c5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 100
+  maxHealthPoints: 1000
+  enemyLayer: 9
+  damagePerHit: 50
+  minTimeBetweenHits: 1
+  maxAttackRange: 2
 --- !u!114 &114728280705775022
 MonoBehaviour:
   m_ObjectHideFlags: 1
