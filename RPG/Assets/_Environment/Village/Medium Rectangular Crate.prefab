@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4159277622895012}
   - component: {fileID: 65150110129219566}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Medium Rectangular Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33048291192122642}
   - component: {fileID: 23817050299364250}
   - component: {fileID: 114075942452982472}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Fountain Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4247680524476220}
   - component: {fileID: 136942943197975036}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Fountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

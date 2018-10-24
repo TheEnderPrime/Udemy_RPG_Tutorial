@@ -54,4 +54,5 @@
         "Temp/":true
     },
     "csharp.referencesCodeLens.enabled": false,
+    "git.ignoreLimitWarning": true,
 }
