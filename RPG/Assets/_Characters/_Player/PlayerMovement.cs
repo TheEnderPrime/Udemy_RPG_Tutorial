@@ -17,10 +17,6 @@ namespace RPG.Characters
         AICharacterControl aiCharacterControl = null;
         GameObject walkTarget = null;
 
-        // TODO solve fight between serialize and const
-        [SerializeField] const int walkableLayerNumber = 8;
-        [SerializeField] const int enemyLayerNumber = 9;
-
         bool isInDirectMode = false;
         private bool Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
@@ -32,27 +28,26 @@ namespace RPG.Characters
             aiCharacterControl = GetComponent<AICharacterControl>();
             walkTarget = new GameObject("walkTarget");
 
-            cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;
+            cameraRaycaster.onMouseOverTerrain += OnMouseOverTerrain;
+            cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;
         }
 
-        void ProcessMouseClick(RaycastHit raycastHit, int layerHit)
+        void OnMouseOverTerrain(Vector3 destination)
         {
-            switch (layerHit)
+            if (Input.GetMouseButton(0))
             {
-                case enemyLayerNumber:
-                    GameObject enemy = raycastHit.collider.gameObject;
-                    aiCharacterControl.SetTarget(enemy.transform);
-                    break;
-                case walkableLayerNumber:
-                    walkTarget.transform.position = raycastHit.point;
-                    aiCharacterControl.SetTarget(walkTarget.transform);
-                    break;
-                default:
-                    Debug.LogWarning("Mouse Click Handling Error in Player Movement");
-                    return;
+                walkTarget.transform.position = destination;
+                aiCharacterControl.SetTarget(walkTarget.transform);
             }
         }
 
+        void OnMouseOverEnemy(Enemy enemy)
+        {
+            if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(1))
+            {
+                aiCharacterControl.SetTarget(enemy.transform);
+            }
+        }
 
         // TODO make this get called once again
         private void ProcessDirectMovement()
